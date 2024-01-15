@@ -442,6 +442,14 @@ footer {
         padding: 5rem 8rem;
     }
 
+    #about>img,
+    #contact>img {
+        /*display: none;*/
+        right: 20%;
+        top: 45%;
+        width: 200px;
+    }
+
     .about-card {
         max-width: 90%;
         padding: 2.5rem;
@@ -498,10 +506,6 @@ footer {
         font-size: 1.2rem;
     }
 
-    #contact>img {
-        top: 30%;
-        width: 500px;
-    }
 
     .about-card {
         max-width: 90%;
