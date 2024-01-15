@@ -1,0 +1,587 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Mulish:wght@200;300;400;500;600;700;800;900&display=swap');
+
+@keyframes breathe {
+
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes fade {
+    0% {
+        transform: translate(-100px);
+        opacity: 0;
+    }
+
+    30% {
+        transform: translate(0);
+        opacity: 1;
+    }
+}
+
+@keyframes scale {
+    0% {
+        transform: scaleY(0);
+    }
+
+    45% {
+        transform: scaleY(1);
+    }
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 65%;
+    font-family: 'Mulish', sans-serif;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: rgb(13, 17, 23);
+    color: white;
+}
+
+.center {
+    text-align: center;
+}
+
+/*.dna-gif {
+    height: 40px;
+    margin: 0 50%;
+    transform: rotate(80deg);
+}*/
+
+/*navbar css*/
+
+
+header .navbar {
+    padding: 3rem 4rem;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+
+    ul {
+        display: flex;
+        justify-content: space-evenly;
+        font-weight: bold;
+        width: 60%;
+
+        li {
+            list-style: none;
+
+            position: relative;
+
+            a {
+                color: white;
+                text-decoration: none;
+                transition: 1s ease;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 95%;
+                    height: 0.2rem;
+                    background-color: white;
+                    width: 100%;
+                    transform: scale(0);
+                    transition: 0.5s;
+                    transform-origin: left;
+                }
+
+                &:hover::before {
+                    transform: scale(1);
+                }
+            }
+        }
+    }
+}
+
+/*main css*/
+
+#particles-js {
+    position: absolute;
+    height: 100vh;
+}
+
+.background-container {
+    height: 100vh;
+    background-image: url('./images/aihand.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+
+section#home {
+    height: calc(100vh - 200px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+h1.home-heading {
+    color: aquamarine;
+    font-size: 8.5rem;
+    font-weight: 400;
+    font-family: 'Black Ops One', system-ui;
+    text-shadow: 0 2px 1px black,
+        -1px 3px 1px black,
+        -2px 5px 1px aquamarine;
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+    animation-name: breathe;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    text-align: center;
+}
+
+main h1#home-text-container {
+    font-size: 2.5rem;
+    margin: 5rem 0;
+    text-align: center;
+    color: aqua;
+}
+
+/* About CSS */
+
+#about,
+#contact {
+    font-size: 1.6rem;
+    padding: 5rem 15rem;
+    line-height: 2.5rem;
+    position: relative;
+}
+
+#about .container,
+#contact .container {
+    display: flex;
+    margin: 1rem 0;
+}
+
+#about>img,
+#contact>img {
+    position: absolute;
+    right: 10px;
+    top: 20%;
+    animation: rotate 120s linear infinite;
+}
+
+#contact>img {
+    top: 10%;
+    width: 500px;
+}
+
+.side-line-container {
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+    align-items: center;
+}
+
+.side-line-1,
+.side-line-2 {
+    background: linear-gradient(transparent, #7C72FF 30%);
+    height: 100%;
+    width: 3px;
+    margin: 10px 0;
+    transform-origin: top;
+    animation: scale linear;
+    animation-timeline: view();
+}
+
+.side-line-2 {
+    background: linear-gradient(#7C72FF, #2DA44E 80%, #3FB950);
+}
+
+
+
+.about-card {
+    padding: 4rem;
+    user-select: none;
+    max-width: 80%;
+    margin: 5rem auto;
+    border: 1px solid #ffffff10;
+    background-color: rgb(22, 27, 34);
+    border-radius: .7rem;
+    transition: 0.5s;
+    z-index: 1;
+    color: rgba(255, 255, 255, 0.847);
+    animation: fade linear;
+    animation-timeline: view();
+}
+
+.about-card:hover {
+    background: linear-gradient(160deg, rgba(52, 137, 59, 0.2) 0%, rgb(22, 27, 34) 100%);
+    transform: scale(1.01);
+}
+
+.about-card p {
+    margin: 2rem 0;
+}
+
+.fa-circle-o {
+    box-shadow: 0 0 30px 3px rgb(75, 75, 224);
+    background-color: rgba(75, 75, 224, 0.25);
+}
+
+.fa-code {
+    box-shadow: 0 0 30px 3px rgb(75, 224, 97);
+    background-color: rgba(75, 224, 97, 0.25);
+}
+
+/* Generaive AI CSS */
+
+#generative-ai,
+#ai-models,
+#llms {
+    overflow: hidden;
+    animation: fade linear;
+    animation-timeline: view();
+}
+
+#generative-ai h3,
+#ai-models h3,
+#llms h3 {
+    text-transform: uppercase;
+    font-size: 4.2rem;
+    letter-spacing: 0.7rem;
+    color: aquamarine;
+    margin-top: 15px;
+}
+
+#generative-ai .heading p,
+#ai-models .heading p,
+#llms .heading p {
+    font-size: 1.2rem;
+    font-weight: 100;
+    margin-top: 15px;
+}
+
+.wrapper {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    margin-top: 6rem;
+    justify-content: center;
+}
+
+#generative-ai .container,
+#ai-models .container,
+#llms .container {
+    height: 60%;
+    width: 75%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: start;
+}
+
+.card {
+    position: relative;
+    width: 80px;
+    border-radius: .75rem;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    border-radius: 2rem;
+    margin: 0 10px;
+    display: flex;
+    align-items: flex-end;
+    transition: .6s cubic-bezier(.28, -0.03, 0, .99);
+    box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.8);
+}
+
+.card>.row {
+    color: white;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.card>.row>.icon {
+    background: #223;
+    color: white;
+    border-radius: 50%;
+    width: 50px;
+    aspect-ratio: 1/1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+}
+
+.card>.row>.description {
+    position: absolute;
+    left: 20px;
+    top: 105%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    opacity: 0;
+    transform: translateY(30px);
+    transition-delay: .3s;
+    transition: all .3s ease;
+    background-color: rgb(13, 17, 23);
+}
+
+
+.description h4 {
+    text-transform: uppercase;
+    font-size: 2.5rem;
+}
+
+.description p {
+    color: #b0b0ba;
+    padding-top: 5px;
+    font-size: large;
+    line-height: 2.4rem;
+}
+
+input {
+    display: none;
+}
+
+input:checked+label {
+    width: 100%;
+}
+
+input:checked+label .description {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+.card[for="c1"] {
+    background-image: url('./images/genAi1.png');
+}
+
+.card[for="c2"] {
+    background-image: url('./images/genAi2.png');
+}
+
+.card[for="c3"] {
+    background-image: url('./images/genAi3.jpg');
+}
+
+.card[for="c4"] {
+    background-image: url('./images/aimodels1.jpeg');
+}
+
+.card[for="c5"] {
+    background-image: url('./images/aimodels2.jpg');
+}
+
+.card[for="c6"] {
+    background-image: url('./images/aimodels3.webp');
+}
+
+.card[for="c7"] {
+    background-image: url('./images/llm1.jpg');
+}
+
+.card[for="c8"] {
+    background-image: url('./images/llm2.jpg');
+}
+
+.card[for="c9"] {
+    background-image: url('./images/llm3.png');
+}
+
+.contact-info {
+    color: aquamarine;
+}
+
+footer {
+    font-size: 1.5rem;
+    padding: 5rem;
+}
+
+@media only screen and (max-width:900px) {
+    @keyframes scale {
+        0% {
+            transform: scaleY(0);
+        }
+
+        50% {
+            transform: scaleY(1);
+        }
+    }
+
+    header .navbar .menu {
+        width: 100%;
+        justify-content: space-evenly;
+    }
+
+    h1.home-heading {
+        font-size: 6.5rem;
+    }
+
+    #about,
+    #contact {
+        padding: 5rem 8rem;
+    }
+
+    .about-card {
+        max-width: 90%;
+        padding: 2.5rem;
+    }
+
+    #generative-ai h3,
+    #ai-models h3,
+    #llms h3 {
+        font-size: 3.5rem;
+    }
+
+    #generative-ai .heading p,
+    #ai-models .heading p,
+    #llms .heading p {
+        font-size: 1rem;
+    }
+
+    #generative-ai .container,
+    #ai-models .container,
+    #llms .container {
+        height: 50%;
+        width: 95%;
+    }
+
+    .description h4 {
+        font-size: 1.8rem;
+    }
+
+    .description p {
+        font-size: 1.5rem;
+        line-height: 2rem;
+    }
+
+}
+
+@media only screen and (max-width:550px) {
+    header .navbar {
+        padding: 3rem 10px;
+        font-size: 1.5rem;
+    }
+
+    header .navbar .menu {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    h1.home-heading {
+        font-size: 3.5rem;
+    }
+
+    #about,
+    #contact {
+        padding: 5rem 2rem;
+        font-size: 1.2rem;
+    }
+
+    #contact>img {
+        top: 30%;
+        width: 500px;
+    }
+
+    .about-card {
+        max-width: 90%;
+        padding: 2rem;
+    }
+
+    #generative-ai,
+    #ai-models,
+    #llms {
+        margin: 100px 0;
+    }
+
+    #generative-ai h3,
+    #ai-models h3 {
+        font-size: 2.5rem;
+    }
+
+    #llms h3 {
+        font-size: 2rem;
+    }
+
+    #generative-ai .heading p,
+    #ai-models .heading p,
+    #llms .heading p {
+        font-size: 0.8rem;
+        padding: 0 1rem;
+    }
+
+    #generative-ai .container,
+    #ai-models .container,
+    #llms .container {
+        height: 100%;
+        width: 95%;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 90%;
+        margin: 10px 0;
+    }
+
+    input:checked+label {
+        width: 90%;
+        height: 100%;
+        margin-bottom: 200px;
+    }
+
+    input:checked+label .description {
+        display: block;
+        z-index: 100;
+    }
+
+    .description h4 {
+        font-size: 1.2rem;
+    }
+
+    .description p {
+        font-size: 1rem;
+        line-height: 1.6rem;
+    }
+
+    footer {
+        font-size: 1rem;
+        padding: 3rem;
+    }
+
+}
+
+@media only screen and (max-width:300px) {
+
+    header .navbar {
+        font-size: 1rem;
+    }
+
+    h1.home-heading {
+        font-size: 2rem;
+    }
+
+    input:checked+label {
+        margin-bottom: 300px;
+    }
+}
