@@ -82,40 +82,40 @@ header .navbar {
     align-items: center;
     font-size: 2rem;
 
-    ul {
-        display: flex;
-        justify-content: space-evenly;
-        font-weight: bold;
-        width: 60%;
+}
 
-        li {
-            list-style: none;
+header ul li {
+    position: relative;
+}
 
-            position: relative;
+header .navbar ul {
+    display: flex;
+    justify-content: space-evenly;
+    font-weight: bold;
+    width: 60%;
+    list-style: none;
+}
 
-            a {
-                color: white;
-                text-decoration: none;
-                transition: 1s ease;
+header .navbar ul a {
+    color: white;
+    text-decoration: none;
+    transition: 1s ease;
+}
 
-                &::before {
-                    content: "";
-                    position: absolute;
-                    top: 95%;
-                    height: 0.2rem;
-                    background-color: white;
-                    width: 100%;
-                    transform: scale(0);
-                    transition: 0.5s;
-                    transform-origin: left;
-                }
+header .navbar ul a::before {
+    content: "";
+    position: absolute;
+    top: 95%;
+    height: 0.2rem;
+    background-color: white;
+    width: 100%;
+    transform: scale(0);
+    transition: 0.5s;
+    transform-origin: left;
+}
 
-                &:hover::before {
-                    transform: scale(1);
-                }
-            }
-        }
-    }
+header .navbar ul a:hover::before {
+    transform: scale(1);
 }
 
 /*main css*/
